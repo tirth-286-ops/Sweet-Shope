@@ -46,4 +46,4 @@ Optimized use of:
 
 ------------------------------------------------------------------------------------------------
 **Admin Dashboard**
-<img width="1851" height="795" alt="image" src="https://github.com/user-attachments/assets/684f269f-e6f7-42cc-b10d-9b40265ecc0c" />
+<img width="1851" height="795" alt="image" src="https://github.com/user-attachments/assets/684f269f-e6f7-42cc-b10d-9b40265ecc0c" /> 
