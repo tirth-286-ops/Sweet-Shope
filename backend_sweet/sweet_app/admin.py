@@ -37,3 +37,4 @@ class PurchasedSweetAdmin(admin.ModelAdmin):
     search_fields = ('sweet__name',)
     readonly_fields = ('purchase_date',)
 
+
