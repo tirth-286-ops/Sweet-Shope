@@ -9,10 +9,11 @@ class Sweet(models.Model):
         ('SUGAR', 'Sugar Based'),
         ('BENGALI', 'Bengali Sweets'),
         ('CHOCOLATE', 'Chocolate Sweets'),
-    ]
-
+        ]
+    
     name = models.CharField(max_length=100, unique=True)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+    unit_type = models.CharField(max_length=3,default='PCS')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     quantity = models.PositiveIntegerField()
     image = models.ImageField(upload_to='sweet_images/', null=True, blank=True)

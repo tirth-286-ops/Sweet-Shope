@@ -93,8 +93,6 @@ export default function SweetsPage() {
   };
 
   return (
-    
-    
     <div style={{ padding: '20px' }}>
       <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Sweets Collection</h1>
 
@@ -146,8 +144,8 @@ export default function SweetsPage() {
               />
               <h3>{sweet.name}</h3>
               <p><strong>Category:</strong> {sweet.category}</p>
-              <p><strong>Price:</strong> ₹{sweet.price}</p>
-              <p><strong>Available:</strong> {sweet.quantity}</p>
+             <p><strong>Price:</strong> ₹{sweet.price} / {sweet.unit_type}</p>
+  <p><strong>Available:</strong> {sweet.quantity} {sweet.unit_type}</p>
 
               <button
                 disabled={isOutOfStock}
@@ -193,7 +191,7 @@ export default function SweetsPage() {
               />
             </div>
 
- <div style={{ marginBottom: '10px' }}>
+   <div style={{ marginBottom: '10px' }}>
   <label><strong>Quantity:</strong></label><br />
   <input
     type="text"
@@ -210,6 +208,7 @@ export default function SweetsPage() {
     style={{ width: '100%', padding: '8px', borderRadius: '5px' }}
   />
 </div>
+
 
             <p><strong>Total Price: ₹{(selectedSweet.price * quantity).toFixed(2)}</strong></p>
 

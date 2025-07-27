@@ -7,7 +7,7 @@ from rest_framework import serializers
 # Optional: customize Sweet display
 @admin.register(Sweet)
 class SweetAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'price', 'quantity')
+    list_display = ('name', 'category', 'price', 'quantity','unit_type')
     search_fields = ('name', 'category')
     list_filter = ('category',)
     ordering = ('name',)
