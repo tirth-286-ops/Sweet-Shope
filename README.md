@@ -72,6 +72,8 @@ Results in clean, maintainable, and bug-free code.
 <img width="1892" height="907" alt="image" src="https://github.com/user-attachments/assets/48b3d55d-03bd-478e-aa38-9ad22b83ca02" />
 **Sweet Page**
 <img width="1895" height="786" alt="image" src="https://github.com/user-attachments/assets/e1f554bc-916c-488f-ac5a-028a0c190355" />
+**Out Of stock image black And white**
+<img width="472" height="803" alt="image" src="https://github.com/user-attachments/assets/ba0ec93c-1a4f-4789-8bf4-cf865e7683d4" />
 
 ---
 
@@ -82,6 +84,9 @@ Results in clean, maintainable, and bug-free code.
 <img width="1900" height="902" alt="image" src="https://github.com/user-attachments/assets/4318bd78-5ed9-4124-93a6-b1fa35290a2b" />
 **View Purchase History**
 <img width="1918" height="703" alt="image" src="https://github.com/user-attachments/assets/acc6c884-e7c2-4e16-b991-9383ca9952bc" />
+**LOW And Out Of Stock**
+<img width="1627" height="390" alt="image" src="https://github.com/user-attachments/assets/5e6a2fc2-5350-4b92-974f-13e3a8e53a55" />
+
 
 ---
 
