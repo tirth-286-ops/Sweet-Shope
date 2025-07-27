@@ -100,6 +100,8 @@ AI didn’t replace my understanding or judgment—it **augmented** my thinking 
 ## Screenshots
 
 **1.User Side (React)**
+**Start Page**
+<img width="1912" height="935" alt="image" src="https://github.com/user-attachments/assets/dcb0841c-647a-4786-9b33-1bc1a286b7df" />
 **Register page**
 <img width="1916" height="811" alt="image" src="https://github.com/user-attachments/assets/abd3b528-4472-41e6-ba36-a9580ecedb50" />
 **Login Page**
