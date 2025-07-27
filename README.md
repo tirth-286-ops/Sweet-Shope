@@ -7,7 +7,7 @@ It allows shop owners to manage sweets, track inventory, and handle user purchas
 ##  Tech Stack
 
 **Frontend:**
-- React.js
+- React
 - Bootstrap & Custom CSS
 
 **Backend:**
