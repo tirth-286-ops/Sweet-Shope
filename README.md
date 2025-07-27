@@ -7,41 +7,53 @@ It allows shop owners to manage sweets, track inventory, and handle user purchas
 ##  Tech Stack
 
 **Frontend:**
--React.js – Component-based UI library for building the frontend
--Bootstrap – For responsive design and layout
--Custom CSS – Fine-tuned styling for visual polish
+- React.js
+- Bootstrap & Custom CSS
 
 **Backend:**
--Django – High-level Python web framework
--Django REST Framework (DRF) – For building RESTful APIs
--JAZZMIN – Beautiful and modern admin interface for Django
--JWT (JSON Web Token) – Secure authentication mechanism
--SQLite / PostgreSQL – Database support (default SQLite, can switch to PostgreSQL)
+- Django
+- Django REST Framework (DRF)
+- JWT (JSON Web Token)
+- JAZZMIN (interface for Django)
+- SQLite / PostgreSQL
 
 ---
 ## Features
 
-## (1)Admin Features 
- 1.Add, Edit, Delete Sweets
-      Upload image, set category, and define price and quantity
-2.Track Inventory
-      Automatically mark sweets as "Out of Stock" when quantity is 0
-3.Role-Based Admin Access
-    Only admins can manage sweets and inventory
-4.Order Management
-    View placed orders with details
-JWT Authentication
-  Secure access using token-based login
+### (1)Admin Features
 
+- **Add, Edit, Delete Sweets**  
+  Upload images, set categories, define prices, and manage stock quantity.
+
+- **Track Inventory**  
+  Automatically marks sweets as "Out of Stock" when the quantity reaches zero.
+
+- **Role-Based Admin Access**  
+  Only admin users can manage sweets and inventory operations.
+
+- **Order Management**  
+  View and manage all placed orders with complete order details.
+
+- **JWT Authentication**  
+  Secure token-based authentication for protected admin routes.
 ---
-## (2)User Features
-1.Browse Sweets
-    View available sweets with image, name, category,Quantity and price
-2.Place Orders
-    Select quantity, view total price, and confirm orders
-3.Responsive UI
-    Fully mobile-friendly design for smooth user experience
-4.Login/Register with JWT
+### User Features
+
+- **Browse Sweets**  
+  View all available sweets with images, names, categories, and prices.
+
+- **Place Orders**  
+  Select quantity, view calculated total price, and place an order.
+
+- **Payment Method Selection**  
+  Choose between UPI (QR code page) or Credit Card (form input) for payment.
+
+- **Responsive UI**  
+  Fully mobile-friendly and responsive design for smooth browsing and ordering.
+
+- **Login/Register with JWT**  
+  Secure user authentication using JWT for login and session management.
+
   Secure user login and session handling
 
 ---
@@ -54,30 +66,25 @@ Results in clean, maintainable, and bug-free code.
 ---
 ## Screenshots
 
-## 1.User Side (React)
-## Register page
+**1.User Side (React)**
+**Register page**
 <img width="1916" height="811" alt="image" src="https://github.com/user-attachments/assets/abd3b528-4472-41e6-ba36-a9580ecedb50" />
-
-## Login Page
+**Login Page**
 <img width="1392" height="747" alt="image" src="https://github.com/user-attachments/assets/7d8b65f3-fe9b-4323-ad2b-b5427b16f9b3" />
-
-## Home Page
+**Home Page**
 <img width="1892" height="907" alt="image" src="https://github.com/user-attachments/assets/48b3d55d-03bd-478e-aa38-9ad22b83ca02" />
-
-## Sweet Page
+**Sweet Page**
 <img width="1895" height="786" alt="image" src="https://github.com/user-attachments/assets/e1f554bc-916c-488f-ac5a-028a0c190355" />
 
 ---
 
-## 2.Admin Side (Django)
-
-### Dashboard View
+**2.Admin Side (Django)**
+**Dashboard View**
 <img width="1903" height="965" alt="image" src="https://github.com/user-attachments/assets/3aa38f59-91bc-4dc4-9248-bf0385c3f882" />
-
-### Add Sweet Form
-
+**Add Sweet Form**
 <img width="1900" height="902" alt="image" src="https://github.com/user-attachments/assets/4318bd78-5ed9-4124-93a6-b1fa35290a2b" />
-
+**View Purchase History**
+<img width="1918" height="703" alt="image" src="https://github.com/user-attachments/assets/acc6c884-e7c2-4e16-b991-9383ca9952bc" />
 
 ---
 
