@@ -20,23 +20,33 @@ It allows shop owners to manage sweets, track inventory, and handle user purchas
 ---
 ## Features
 
-### (1)Admin Features
+### (1) Admin Features
 
 - **Add, Edit, Delete Sweets**  
-  Upload images, set categories, define prices, and manage stock quantity.
+  Upload images, set categories (e.g., Milk Based, Dry Fruit, Sugar Based, Bengali, Chocolate), define prices (per piece) and manage stock quantity.
 
 - **Track Inventory**  
-  Automatically marks sweets as "Out of Stock" when the quantity reaches zero.
-
+  Inventory is updated automatically after every order. If the quantity of a sweet becomes zero, it is marked as **"Out of Stock"** automatically.
+  
+  **Low Stock Notifications**  
+  Admin receives a **"notification alert"** when the quantity of any sweet falls below a set threshold (e.g., less than 5 units), helping to restock in time.
+  Also  receives a **"notification alert"** Sweets  **"Out of Stock"** (e.g.,Kaju Katri' is now OUT OF STOCK!).
+ 
 - **Role-Based Admin Access**  
-  Only admin users can manage sweets and inventory operations.
+  Only users with admin roles can access sweet management, inventory control, and order data. All sensitive admin routes are protected.
 
 - **Order Management**  
-  View and manage all placed orders with complete order details.
+  Admin can view all placed orders, including buyer details, sweet name, quantity, price.
+
+- **Auto Price Calculation**  
+  Admin doesn’t need to calculate the total price manually.  
+  The system uses:
+  Total Price = Sweet Price × Quantity
+  It also automatically reduces the sweet’s quantity in inventory after each purchase.
 
 - **JWT Authentication**  
-  Secure token-based authentication for protected admin routes.
----
+All admin operations are protected using secure JWT-based login. Unauthorized access is blocked.
+
 ### (2)User Features
 
 - **Browse Sweets**  
