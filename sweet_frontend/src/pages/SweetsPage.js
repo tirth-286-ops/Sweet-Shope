@@ -145,7 +145,7 @@ export default function SweetsPage() {
               <h3>{sweet.name}</h3>
               <p><strong>Category:</strong> {sweet.category}</p>
              <p><strong>Price:</strong> ₹{sweet.price} / {sweet.unit_type}</p>
-  <p><strong>Available:</strong> {sweet.quantity} {sweet.unit_type}</p>
+      <p><strong>Available:</strong> {sweet.quantity} {sweet.unit_type}</p>
 
               <button
                 disabled={isOutOfStock}
