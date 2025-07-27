@@ -51,6 +51,7 @@ All admin operations are protected using secure JWT-based login. Unauthorized ac
 
 - **Browse Sweets**  
   View all available sweets with images, names, categories, and prices.
+  And Also search Sweet name and purchase the sweets.
 
 - **Place Orders**  
   Select quantity, view calculated total price, and place an order.
@@ -60,7 +61,6 @@ All admin operations are protected using secure JWT-based login. Unauthorized ac
 
 - **Login/Register with JWT**  
   Secure user authentication using JWT for login and session management.
-
   Secure user login and session handling
 
 ---
@@ -107,7 +107,7 @@ AI didn’t replace my understanding or judgment—it **augmented** my thinking 
 **Home Page**
 <img width="1892" height="907" alt="image" src="https://github.com/user-attachments/assets/48b3d55d-03bd-478e-aa38-9ad22b83ca02" />
 **Sweet Page**
-<img width="1895" height="786" alt="image" src="https://github.com/user-attachments/assets/e1f554bc-916c-488f-ac5a-028a0c190355" />
+<img width="1893" height="808" alt="image" src="https://github.com/user-attachments/assets/8f37aecf-a584-4d5f-9827-f45c978cdbf5" />
 **Out Of stock image black And white**
 <img width="1862" height="780" alt="image" src="https://github.com/user-attachments/assets/a154b0bb-dcf9-4cf8-a7ce-f7ddbd27cc3c" />
 
