@@ -121,7 +121,7 @@ AI didn’t replace my understanding or judgment—it **augmented** my thinking 
 <img width="1900" height="902" alt="image" src="https://github.com/user-attachments/assets/4318bd78-5ed9-4124-93a6-b1fa35290a2b" />
 **View Purchase History**
 <img width="1918" height="703" alt="image" src="https://github.com/user-attachments/assets/acc6c884-e7c2-4e16-b991-9383ca9952bc" />
-**LOW And Out Of Stock**
+**LOW And Out Of Stock Notification**
 <img width="1895" height="918" alt="image" src="https://github.com/user-attachments/assets/a07aeec5-22be-4dff-a649-5af06012e78c" />
 
 ---
