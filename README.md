@@ -1,4 +1,4 @@
-# MithaiMagic - Sweet Shop Management System
+# TDD Kata: Sweet Shop Management System
 
 A full-featured sweet shop management system built using Django REST Framework and React. 
 It allows shop owners to manage sweets, track inventory, and handle user purchases with role-based login and JWT authentication.
