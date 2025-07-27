@@ -5,6 +5,7 @@ export default function SweetsPage() {
   const [filteredSweets, setFilteredSweets] = useState([]);
   const [categoryFilter, setCategoryFilter] = useState('All');
   const [priceSort, setPriceSort] = useState('None');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const [showModal, setShowModal] = useState(false);
   const [selectedSweet, setSelectedSweet] = useState(null);
@@ -26,13 +27,18 @@ export default function SweetsPage() {
     if (categoryFilter !== 'All') {
       filtered = filtered.filter(sweet => sweet.category === categoryFilter);
     }
+    if (searchTerm.trim()) {
+      filtered = filtered.filter(sweet =>
+        sweet.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
     if (priceSort === 'LowToHigh') {
       filtered.sort((a, b) => a.price - b.price);
     } else if (priceSort === 'HighToLow') {
       filtered.sort((a, b) => b.price - a.price);
     }
     setFilteredSweets(filtered);
-  }, [categoryFilter, priceSort, sweets]);
+  }, [categoryFilter, priceSort, searchTerm, sweets]);
 
   const categories = ['All', ...new Set(sweets.map(sweet => sweet.category))];
 
@@ -97,7 +103,7 @@ export default function SweetsPage() {
       <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Sweets Collection</h1>
 
       {/* Filter Controls */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '20px' }}>
         <div>
           <label style={{ fontWeight: 'bold' }}>Filter by Category: </label>
           <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
@@ -113,6 +119,16 @@ export default function SweetsPage() {
             <option value="LowToHigh">Low to High</option>
             <option value="HighToLow">High to Low</option>
           </select>
+        </div>
+        <div>
+          <label style={{ fontWeight: 'bold' }}>Search by Name: </label>
+          <input
+            type="text"
+            placeholder="Enter sweet name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{ padding: '6px', borderRadius: '5px' }}
+          />
         </div>
       </div>
 
@@ -144,9 +160,8 @@ export default function SweetsPage() {
               />
               <h3>{sweet.name}</h3>
               <p><strong>Category:</strong> {sweet.category}</p>
-             <p><strong>Price:</strong> ₹{sweet.price} / {sweet.unit_type}</p>
-      <p><strong>Available:</strong> {sweet.quantity} {sweet.unit_type}</p>
-
+              <p><strong>Price:</strong> ₹{sweet.price} / {sweet.unit_type}</p>
+              <p><strong>Available:</strong> {sweet.quantity} {sweet.unit_type}</p>
               <button
                 disabled={isOutOfStock}
                 onClick={() => openModal(sweet)}
@@ -191,24 +206,22 @@ export default function SweetsPage() {
               />
             </div>
 
-   <div style={{ marginBottom: '10px' }}>
-  <label><strong>Quantity:</strong></label><br />
-  <input
-    type="text"
-    value={quantity}
-    onChange={(e) => {
-      const val = parseInt(e.target.value);
-      if (!isNaN(val) && val > 0 && val <= selectedSweet.quantity) {
-        setQuantity(val);
-      } else {
-        // Optionally clear or ignore invalid input
-        setQuantity('');
-      }
-    }}
-    style={{ width: '100%', padding: '8px', borderRadius: '5px' }}
-  />
-</div>
-
+            <div style={{ marginBottom: '10px' }}>
+              <label><strong>Quantity:</strong></label><br />
+              <input
+                type="text"
+                value={quantity}
+                onChange={(e) => {
+                  const val = parseInt(e.target.value);
+                  if (!isNaN(val) && val > 0 && val <= selectedSweet.quantity) {
+                    setQuantity(val);
+                  } else {
+                    setQuantity('');
+                  }
+                }}
+                style={{ width: '100%', padding: '8px', borderRadius: '5px' }}
+              />
+            </div>
 
             <p><strong>Total Price: ₹{(selectedSweet.price * quantity).toFixed(2)}</strong></p>
 
