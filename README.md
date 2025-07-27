@@ -37,7 +37,7 @@ It allows shop owners to manage sweets, track inventory, and handle user purchas
 - **JWT Authentication**  
   Secure token-based authentication for protected admin routes.
 ---
-### User Features
+### (2)User Features
 
 - **Browse Sweets**  
   View all available sweets with images, names, categories, and prices.
