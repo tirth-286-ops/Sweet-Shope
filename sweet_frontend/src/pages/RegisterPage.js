@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // ⬅️ Added Link
+import { useNavigate, Link } from 'react-router-dom';
+import './RegisterPage.css';
 
 function RegisterPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [popupMessage, setPopupMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -34,132 +35,82 @@ function RegisterPage() {
 
       const data = await response.json();
       if (response.ok) {
-        setMessage('✅ Registration Successful! Redirecting to login...');
+        setPopupMessage('✅ Registration Successful! Redirecting to login...');
         setUsername('');
         setEmail('');
         setPassword('');
         setErrors({});
-
         setTimeout(() => {
+          setPopupMessage('');
           navigate('/login');
         }, 2000);
       } else {
-        setMessage(data.error || '❌ Registration Failed!');
+        setPopupMessage(data.error || '❌ Registration Failed!');
+        setTimeout(() => setPopupMessage(''), 2000);
       }
-    } catch (error) {
-      setMessage('❌ Server Error');
+    } catch {
+      setPopupMessage('❌ Server Error');
+      setTimeout(() => setPopupMessage(''), 2000);
     }
     setLoading(false);
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h2 style={styles.heading}>Sign Up</h2>
+    <div className="register-container">
+      {/* Popup message */}
+      {popupMessage && (
+        <div
+          className="popup-message"
+          style={{
+            backgroundColor: popupMessage.includes('✅') ? '#d4edda' : '#f8d7da',
+            color: popupMessage.includes('✅') ? '#155724' : '#721c24',
+          }}
+        >
+          {popupMessage}
+        </div>
+      )}
+
+      <div className="register-box">
+        <h2 className="register-heading">Sign Up</h2>
 
         <input
-          style={styles.input}
+          className="register-input"
           type="text"
           placeholder="Username"
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
-        {errors.username && <span style={styles.error}>{errors.username}</span>}
+        {errors.username && <span className="register-error">{errors.username}</span>}
 
         <input
-          style={styles.input}
+          className="register-input"
           type="email"
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-        {errors.email && <span style={styles.error}>{errors.email}</span>}
+        {errors.email && <span className="register-error">{errors.email}</span>}
 
         <input
-          style={styles.input}
+          className="register-input"
           type="password"
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        {errors.password && <span style={styles.error}>{errors.password}</span>}
+        {errors.password && <span className="register-error">{errors.password}</span>}
 
-        <button style={styles.button} onClick={handleRegister} disabled={loading}>
+        <button className="register-button" onClick={handleRegister} disabled={loading}>
           {loading ? 'Registering...' : 'Register'}
         </button>
 
-        {message && <p style={styles.message}>{message}</p>}
-
-        {/* 🔗 Link to Login */}
-        <p style={styles.loginText}>
-          Already have an account? <Link to="/login" style={styles.loginLink}>Login here</Link>
+        <p className="register-login-text">
+          Already have an account?{' '}
+          <Link to="/login" className="register-login-link">Login here</Link>
         </p>
       </div>
     </div>
   );
 }
-
-const styles = {
-  container: {
-    backgroundColor: '#fdf1f2',
-    height: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  card: {
-    backgroundColor: '#fff',
-    padding: '30px',
-    borderRadius: '12px',
-    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-    width: '300px',
-    textAlign: 'center',
-  },
-  heading: {
-    marginBottom: '20px',
-    fontSize: '1.8rem',
-    color: '#f08a5d',
-  },
-  input: {
-    width: '100%',
-    padding: '10px',
-    marginBottom: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    fontSize: '1rem',
-  },
-  button: {
-    width: '100%',
-    padding: '12px',
-    backgroundColor: '#f08a5d',
-    color: 'white',
-    border: 'none',
-    borderRadius: '8px',
-    fontWeight: 'bold',
-    cursor: 'pointer',
-    fontSize: '1rem',
-  },
-  error: {
-    color: '#d32f2f',
-    fontSize: '0.85rem',
-    textAlign: 'left',
-    display: 'block',
-    marginBottom: '8px',
-  },
-  message: {
-    marginTop: '15px',
-    fontSize: '1rem',
-    color: '#155724',
-  },
-  loginText: {
-    marginTop: '20px',
-    fontSize: '0.95rem',
-  },
-  loginLink: {
-    color: '#f08a5d',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-  },
-};
 
 export default RegisterPage;

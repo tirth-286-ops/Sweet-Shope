@@ -12,23 +12,24 @@ class SweetAdmin(admin.ModelAdmin):
     list_filter = ('category',)
     ordering = ('name',)
 
-    def save_model(self, request, obj, form, change):
-        super().save_model(request, obj, form, change)
+    def changelist_view(self, request, extra_context=None):
+        # Load sweets with low or zero stock
+        out_of_stock = Sweet.objects.filter(quantity=0)
+        low_stock = Sweet.objects.filter(quantity__gt=0, quantity__lte=5)
 
-        # Admin popup messages based on quantity
-        if obj.quantity == 0:
+        for sweet in out_of_stock:
             self.message_user(
                 request,
-                f"⚠️ '{obj.name}' is now OUT OF STOCK!",
+                f"'{sweet.name}' is now OUT OF STOCK!",
                 level=messages.WARNING
             )
-        elif obj.quantity <= 5:
+        for sweet in low_stock:
             self.message_user(
                 request,
-                f"ℹ️ '{obj.name}' is LOW ON STOCK ({obj.quantity} left).",
+                f"'{sweet.name}' is LOW ON STOCK ({sweet.quantity} left).",
                 level=messages.INFO
             )
-
+        return super().changelist_view(request, extra_context)
 @admin.register(PurchasedSweet)
 class PurchasedSweetAdmin(admin.ModelAdmin):
     list_display = ('buyer_name','sweet', 'quantity', 'price', 'purchase_date')

@@ -63,3 +63,4 @@ class PurchaseCreateAPIView(generics.CreateAPIView):
     queryset = PurchasedSweet.objects.all()
     serializer_class = PurchasedSweetSerializer  
 
+    

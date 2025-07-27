@@ -5,12 +5,13 @@ import './LoginPage.css';
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [popupMessage, setPopupMessage] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     if (!username || !password) {
-      setMessage('❗ All fields are required');
+      setPopupMessage('❗ All fields are required');
+      setTimeout(() => setPopupMessage(''), 2000);
       return;
     }
 
@@ -24,25 +25,41 @@ function LoginPage() {
       const data = await response.json();
 
       if (response.ok) {
-        // Store token and username
         localStorage.setItem('token', data.token);
-        localStorage.setItem('username', username); // ✅ Store username
-        setMessage('✅ Login Successful!');
+        localStorage.setItem('username', username);
+        setPopupMessage('✅ Login Successful!');
+
         setTimeout(() => {
+          setPopupMessage('');
           navigate('/home');
         }, 1000);
       } else {
-        setMessage(data.error || '❌ Login Failed!');
+        setPopupMessage(data.error || '❌ Login Failed!');
+        setTimeout(() => setPopupMessage(''), 2000);
       }
     } catch (error) {
-      setMessage('❌ Server error!');
+      setPopupMessage('❌ Server error!');
+      setTimeout(() => setPopupMessage(''), 2000);
     }
   };
 
   return (
     <div className="login-container">
+      {/* Popup message outside the login box */}
+      {popupMessage && (
+        <div
+          className="popup-message"
+          style={{
+            backgroundColor: popupMessage.includes('✅') ? '#d4edda' : '#f8d7da',
+            color: popupMessage.includes('✅') ? '#155724' : '#721c24',
+          }}
+        >
+          {popupMessage}
+        </div>
+      )}
+
       <div className="login-box">
-        <h2>Login</h2>
+        <h2 style={{ marginBottom: '20px', color: '#333' }}>Login</h2>
 
         <input
           type="text"
@@ -64,25 +81,9 @@ function LoginPage() {
           Login
         </button>
 
-        {message && (
-          <p
-            className="login-message"
-            style={{ color: message.includes('✅') ? 'green' : 'red' }}
-          >
-            {message}
-          </p>
-        )}
-
-        <p style={{ textAlign: 'center', marginTop: '1rem' }}>
+        <p style={{ marginTop: '1rem' }}>
           Don't have an account?{' '}
-          <Link
-            to="/register"
-            style={{
-              color: '#f2855d',
-              fontWeight: 'bold',
-              textDecoration: 'underline',
-            }}
-          >
+          <Link to="/register">
             Register here
           </Link>
         </p>
