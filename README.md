@@ -71,6 +71,32 @@ Models, views, and serializers are covered with test cases.
 Results in clean, maintainable, and bug-free code.
 
 ---
+## My AI Usage
+
+In this project, I used AI tools to assist with development and documentation. Below is a detailed summary:
+
+### Tools Used:
+- **ChatGPT by OpenAI**  
+
+###  How I Used Them:
+
+- I used **ChatGPT** to:
+  - Brainstorm feature ideas and user/admin flows for the Sweet Shop Management System.
+  - Generate code for JWT authentication.
+  - Draft TDD strategies and suggest test cases for Django views and serializers.
+  - Get suggestions for role-based access and stock auto-deduction logic.
+
+### 🧠 Reflection on AI Impact:
+
+Using ChatGPT greatly enhanced my productivity and workflow efficiency. It:
+- Helped reduce writing time, letting me focus on core logic and UI design.
+- Improved my code quality by suggesting cleaner, modular structures.
+- Served as a quick assistant to clarify doubts on Django REST Framework, React integration, and authentication flows.
+- Allowed me to brainstorm and validate design ideas quickly without needing long documentation searches.
+
+AI didn’t replace my understanding or judgment—it **augmented** my thinking and allowed me to build features faster and with more confidence.
+
+---
 ## Screenshots
 
 **1.User Side (React)**
