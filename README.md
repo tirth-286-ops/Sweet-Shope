@@ -22,26 +22,26 @@ It allows shop owners to manage sweets, track inventory, and handle user purchas
 ## Features
 
 ## (1)Admin Features 
-## Add, Edit, Delete Sweets
+ 1.Add, Edit, Delete Sweets
       Upload image, set category, and define price and quantity
-## Track Inventory
+2.Track Inventory
       Automatically mark sweets as "Out of Stock" when quantity is 0
-## Role-Based Admin Access
+3.Role-Based Admin Access
     Only admins can manage sweets and inventory
-## Order Management
+4.Order Management
     View placed orders with details
-## JWT Authentication
+JWT Authentication
   Secure access using token-based login
 
 ---
 ## (2)User Features
-## Browse Sweets
+1.Browse Sweets
     View available sweets with image, name, category,Quantity and price
-## Place Orders
+2.Place Orders
     Select quantity, view total price, and confirm orders
-## Responsive UI
+3.Responsive UI
     Fully mobile-friendly design for smooth user experience
-## Login/Register with JWT
+4.Login/Register with JWT
   Secure user login and session handling
 
 ---
