@@ -110,6 +110,8 @@ AI didn’t replace my understanding or judgment—it **augmented** my thinking 
 <img width="1892" height="907" alt="image" src="https://github.com/user-attachments/assets/48b3d55d-03bd-478e-aa38-9ad22b83ca02" />
 **Sweet Page**
 <img width="1893" height="808" alt="image" src="https://github.com/user-attachments/assets/8f37aecf-a584-4d5f-9827-f45c978cdbf5" />
+**Purchase Sweets**
+<img width="1875" height="865" alt="image" src="https://github.com/user-attachments/assets/6608976d-da71-4ecd-8ab1-9e47df2132b5" />
 **Out Of stock image black And white**
 <img width="1862" height="780" alt="image" src="https://github.com/user-attachments/assets/a154b0bb-dcf9-4cf8-a7ce-f7ddbd27cc3c" />
 
