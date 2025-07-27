@@ -45,9 +45,6 @@ It allows shop owners to manage sweets, track inventory, and handle user purchas
 - **Place Orders**  
   Select quantity, view calculated total price, and place an order.
 
-- **Payment Method Selection**  
-  Choose between UPI (QR code page) or Credit Card (form input) for payment.
-
 - **Responsive UI**  
   Fully mobile-friendly and responsive design for smooth browsing and ordering.
 
