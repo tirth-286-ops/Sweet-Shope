@@ -41,34 +41,45 @@ function HomePage({ sweetImages, currentSlide }) {
       </div>
 
       <section className="category-section">
-        <center><h2>Sweet Categories</h2></center>
-        <table className="category-table">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Description</th>
-              <th>Popular Items</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Traditional Mithai</td>
-              <td>Classic Indian sweets made for every occasion</td>
-              <td>Ladoo, Barfi, Halwa</td>
-            </tr>
-            <tr>
-              <td>Milk Based</td>
-              <td>Creamy, rich sweets made with milk and khoya</td>
-              <td>Rasmalai, Rasgulla, Kalakand</td>
-            </tr>
-            <tr>
-              <td>Dry Fruit Special</td>
-              <td>Healthy and delicious sweets loaded with nuts</td>
-              <td>Kaju Katli, Dry Fruit Roll</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+  <center><h2>Sweet Categories</h2></center>
+  <table className="category-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Popular Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Traditional Mithai</td>
+        <td>Classic Indian sweets made for every occasion</td>
+        <td>Ladoo, Barfi, Halwa</td>
+      </tr>
+      <tr>
+        <td>Milk Based</td>
+        <td>Creamy, rich sweets made with milk and khoya</td>
+        <td>Rasmalai, Rasgulla, Kalakand</td>
+      </tr>
+      <tr>
+        <td>Dry Fruit Special</td>
+        <td>Healthy and delicious sweets loaded with nuts</td>
+        <td>Kaju Katli, Dry Fruit Roll</td>
+      </tr>
+      <tr>
+        <td>Chocolate Sweets</td>
+        <td>Fusion of rich chocolate with traditional Indian flavors</td>
+        <td>Chocolate Barfi, Choco Ladoo, Chocolate Peda</td>
+      </tr>
+      <tr>
+        <td>Bengali Sweets</td>
+        <td>Authentic sweets from Bengal, soaked in syrup and love</td>
+        <td>Sandesh, Mishti Doi, Chomchom</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
     </div>
   );
 }

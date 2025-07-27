@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,25 @@ INSTALLED_APPS = [
     'sweet_app',
     'corsheaders',
 ]
+JAZZMIN_SETTINGS = {
+    "site_title": "MagicMithai Admin",
+    "site_header": "MagicMithai Dashboard",
+    "site_brand": "MagicMithai",
+    "welcome_sign": "Welcome to MagicMithai Admin",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+}
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",       
+    "brand_colour": "dark",  
+    "accent": "danger",      
+    "navbar": "dark",
+    "sidebar": "dark",
+    "theme": "darkly",
+    "dark_mode_theme": "darkly",
+}
+
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

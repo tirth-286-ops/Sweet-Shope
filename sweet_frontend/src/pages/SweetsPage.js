@@ -15,7 +15,7 @@ export default function SweetsPage() {
     fetch('http://localhost:8000/api/sweets/')
       .then(response => response.json())
       .then(data => {
-        setSweets(data); // Show all sweets (including out-of-stock)
+        setSweets(data);
         setFilteredSweets(data);
       })
       .catch(error => console.error('Error fetching sweets:', error));
@@ -49,20 +49,20 @@ export default function SweetsPage() {
   };
 
   const handlePurchase = () => {
-    if (!buyerName || quantity < 1) {
-      alert('Please enter a valid name and quantity.');
+    if (!buyerName.trim()) {
+      alert('Please enter your name.');
       return;
     }
 
-    if (quantity > selectedSweet.quantity) {
-      alert('Not enough stock.');
+    if (quantity < 1 || quantity > selectedSweet.quantity) {
+      alert(`Please enter a valid quantity between 1 and ${selectedSweet.quantity}.`);
       return;
     }
 
     const purchaseData = {
       sweet: selectedSweet.id,
       buyer_name: buyerName,
-      quantity,
+      quantity: quantity,
       price: selectedSweet.price * quantity,
     };
 
@@ -93,6 +93,8 @@ export default function SweetsPage() {
   };
 
   return (
+    
+    
     <div style={{ padding: '20px' }}>
       <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Sweets Collection</h1>
 
@@ -133,23 +135,23 @@ export default function SweetsPage() {
               <img
                 src={sweet.image || 'https://via.placeholder.com/250x180?text=No+Image'}
                 alt={sweet.name}
-                title={isOutOfStock ? 'Out of Stock' : ''}
                 style={{
                   width: '100%',
                   height: '180px',
                   objectFit: 'cover',
                   borderRadius: '8px',
                   filter: isOutOfStock ? 'grayscale(100%)' : 'none',
-                  opacity: isOutOfStock ? 0.6 : 1,
-                  transition: 'all 0.3s ease'
+                  opacity: isOutOfStock ? 0.6 : 1
                 }}
               />
-              <h3 style={{ margin: '10px 0 5px' }}>{sweet.name}</h3>
+              <h3>{sweet.name}</h3>
               <p><strong>Category:</strong> {sweet.category}</p>
               <p><strong>Price:</strong> ₹{sweet.price}</p>
-              <p><strong>Quantity:</strong> {sweet.quantity}</p>
+              <p><strong>Available:</strong> {sweet.quantity}</p>
 
               <button
+                disabled={isOutOfStock}
+                onClick={() => openModal(sweet)}
                 style={{
                   marginTop: '10px',
                   padding: '8px 16px',
@@ -160,8 +162,6 @@ export default function SweetsPage() {
                   cursor: isOutOfStock ? 'not-allowed' : 'pointer',
                   fontWeight: 'bold'
                 }}
-                disabled={isOutOfStock}
-                onClick={() => openModal(sweet)}
               >
                 {isOutOfStock ? 'Out of Stock' : 'Purchase'}
               </button>
@@ -170,7 +170,7 @@ export default function SweetsPage() {
         })}
       </div>
 
-      {/* Modal Form */}
+      {/* Modal */}
       {showModal && selectedSweet && (
         <div style={{
           position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
@@ -190,21 +190,28 @@ export default function SweetsPage() {
                 value={buyerName}
                 onChange={(e) => setBuyerName(e.target.value)}
                 style={{ width: '100%', padding: '8px', borderRadius: '5px' }}
-                placeholder="Enter your name"
               />
             </div>
 
-            <div style={{ marginBottom: '10px' }}>
-              <label><strong>Quantity:</strong></label><br />
-              <input
-                type="number"
-                min="1"
-                max={selectedSweet.quantity}
-                value={quantity}
-                onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-                style={{ width: '100%', padding: '8px', borderRadius: '5px' }}
-              />
-            </div>
+ <div style={{ marginBottom: '10px' }}>
+  <label><strong>Quantity:</strong></label><br />
+  <input
+    type="text"
+    value={quantity}
+    onChange={(e) => {
+      const val = parseInt(e.target.value);
+      if (!isNaN(val) && val > 0 && val <= selectedSweet.quantity) {
+        setQuantity(val);
+      } else {
+        // Optionally clear or ignore invalid input
+        setQuantity('');
+      }
+    }}
+    style={{ width: '100%', padding: '8px', borderRadius: '5px' }}
+  />
+</div>
+
+            <p><strong>Total Price: ₹{(selectedSweet.price * quantity).toFixed(2)}</strong></p>
 
             <div style={{ marginTop: '20px' }}>
               <button

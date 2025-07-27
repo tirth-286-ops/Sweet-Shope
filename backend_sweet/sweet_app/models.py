@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-
 from django.core.exceptions import ValidationError
 
 class Sweet(models.Model):
@@ -27,7 +26,7 @@ class Sweet(models.Model):
 class PurchasedSweet(models.Model):
     sweet = models.ForeignKey(Sweet, on_delete=models.CASCADE)
     buyer_name = models.CharField(max_length=100, null=True, blank=True)
-    quantity = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField(null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     purchase_date = models.DateTimeField(auto_now_add=True)
 

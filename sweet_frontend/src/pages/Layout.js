@@ -32,15 +32,22 @@ export default function Layout({ children }) {
         }}
       >
         {/* Left Side: Shop Name */}
-        <span
-          style={{
-            color: '#fff',
-            fontWeight: 'bold',
-            fontSize: '20px',
-          }}
-        >
-          MithaiMagic Shop
-        </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <img
+        src="/logo192.png"
+        alt="MithaiMagic Logo"
+        style={{ height: '40px', width: '40px', borderRadius: '50%' }}
+      />
+      <span
+        style={{
+          color: '#fff',
+          fontWeight: 'bold',
+          fontSize: '20px',
+        }}
+      >
+        MithaiMagic Shop
+      </span>
+    </div>
 
         {/* Right Side: Links + Username + Logout */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
