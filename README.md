@@ -4,29 +4,48 @@ A full-featured sweet shop management system built using Django REST Framework a
 It allows shop owners to manage sweets, track inventory, and handle user purchases with role-based login and JWT authentication.
 
 ---
-
-## Features
-- Add, edit, delete sweets (with image & category)
-- Track stock and display “Out of Stock” items visually
-- Quantity-based pricing logi
-- Role-based login (admin & user)
-- JWT authentication
-- Responsive UI (React + modern CSS)
-
----
-
 ##  Tech Stack
 
 **Frontend:**
-- React.js
-- Bootstrap & Custom CSS
+-React.js – Component-based UI library for building the frontend
+-Bootstrap – For responsive design and layout
+-Custom CSS – Fine-tuned styling for visual polish
 
 **Backend:**
-- Django
-- Django REST Framework (DRF)
-- SQLite / PostgreSQL
+-Django – High-level Python web framework
+-Django REST Framework (DRF) – For building RESTful APIs
+-JAZZMIN – Beautiful and modern admin interface for Django
+-JWT (JSON Web Token) – Secure authentication mechanism
+-SQLite / PostgreSQL – Database support (default SQLite, can switch to PostgreSQL)
 
 ---
+## Features
+
+## (1)Admin Features 
+## Add, Edit, Delete Sweets
+      Upload image, set category, and define price and quantity
+## Track Inventory
+      Automatically mark sweets as "Out of Stock" when quantity is 0
+## Role-Based Admin Access
+    Only admins can manage sweets and inventory
+## Order Management
+    View placed orders with details
+## JWT Authentication
+  Secure access using token-based login
+
+---
+## (2)User Features
+## Browse Sweets
+    View available sweets with image, name, category,Quantity and price
+## Place Orders
+    Select quantity, view total price, and confirm orders
+## Responsive UI
+    Fully mobile-friendly design for smooth user experience
+## Login/Register with JWT
+  Secure user login and session handling
+
+---
+
 ## Test-Driven Development (TDD)
 All core logic is written using a TDD approach.
 Models, views, and serializers are covered with test cases.
