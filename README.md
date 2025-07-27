@@ -86,7 +86,7 @@ In this project, I used AI tools to assist with development and documentation. B
   - Draft TDD strategies and suggest test cases for Django views and serializers.
   - Get suggestions for role-based access and stock auto-deduction logic.
 
-### 🧠 Reflection on AI Impact:
+### Reflection on AI Impact:
 
 Using ChatGPT greatly enhanced my productivity and workflow efficiency. It:
 - Helped reduce writing time, letting me focus on core logic and UI design.
