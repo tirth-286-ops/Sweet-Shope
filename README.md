@@ -74,25 +74,30 @@ Results in clean, maintainable, and bug-free code.
 
 ## Prerequisites Make sure the following are installed:
 
--Python 3.x
--npm(React)
--SQLite (running and configured) Ensure the database details in backend_sweet/settings.py match your system.
 
-**JAZZMIN (interface for Django)**
--pip install jazzmin
--INSTALLED_APPS = [ 'jazzmin',...]
--python manage.py migrate 
--python manage.py runserver
+Make sure the following are installed:
 
-**Go into the frontend folder cd sweet_frontend**
--npm install 
--npm start
+- Python 3.x  
+- npm (React)  
+- SQLite (running and configured)  
+  > Ensure the database details in `backend_sweet/settings.py` match your system.
 
-**Go into the backend folder cd  backend_sweet**
--pip install -r requirements.txt.
--python manage.py makemigrations 
--python manage.py migrate 
--python manage.py runserver
+- JAZZMIN (interface for Django)  
+  ```bash
+  pip install jazzmin
+
+**Frontend Setup**
+cd sweet_frontend
+npm install
+npm start
+
+**Backend Setup**
+cd backend_sweet
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
 
 ---
 ## My AI Usage
@@ -153,7 +158,6 @@ AI didn’t replace my understanding or judgment—it **augmented** my thinking 
 <img width="1895" height="918" alt="image" src="https://github.com/user-attachments/assets/a07aeec5-22be-4dff-a649-5af06012e78c" />
 
 ---
-## Author
-**Tirth Mehta**
+## Author : Tirth Mehta
 
 
