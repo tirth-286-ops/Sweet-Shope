@@ -71,6 +71,30 @@ Models, views, and serializers are covered with test cases.
 Results in clean, maintainable, and bug-free code.
 
 ---
+
+## Prerequisites Make sure the following are installed:
+
+-Python 3.x
+-npm(React)
+-SQLite (running and configured) Ensure the database details in backend_sweet/settings.py match your system.
+
+**JAZZMIN (interface for Django)**
+-pip install jazzmin
+-INSTALLED_APPS = [ 'jazzmin',...]
+-python manage.py migrate 
+-python manage.py runserver
+
+**Go into the frontend folder cd sweet_frontend**
+-npm install 
+-npm start
+
+**Go into the backend folder cd  backend_sweet**
+-pip install -r requirements.txt.
+-python manage.py makemigrations 
+-python manage.py migrate 
+-python manage.py runserver
+
+---
 ## My AI Usage
 
 In this project, I used AI tools to assist with development and documentation. Below is a detailed summary:
@@ -129,6 +153,7 @@ AI didn’t replace my understanding or judgment—it **augmented** my thinking 
 <img width="1895" height="918" alt="image" src="https://github.com/user-attachments/assets/a07aeec5-22be-4dff-a649-5af06012e78c" />
 
 ---
-
+## Author
+**Tirth Mehta**
 
 
